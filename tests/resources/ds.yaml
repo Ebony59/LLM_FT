@@ -1,0 +1,729 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      X-Amzn-Trace-Id:
+      - 6489d384-9d03-4bfd-a0ca-e05c7ed84fb3
+      user-agent:
+      - datasets/3.1.0; hf_hub/0.26.3; python/3.10.12; torch/2.0.1+cu118; huggingface_hub/0.26.3;
+        pyarrow/18.1.0
+    method: HEAD
+    uri: https://huggingface.co/datasets/ChaiML/horror_data_formatted/resolve/main/README.md
+  response:
+    body:
+      string: ''
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - inline; filename*=UTF-8''README.md; filename="README.md";
+      Content-Length:
+      - '269'
+      Content-Security-Policy:
+      - default-src 'none'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Sat, 30 Nov 2024 19:29:08 GMT
+      ETag:
+      - '"6322c10f2cc1c2436179a0a66189ead7442637e4"'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      Via:
+      - 1.1 bc93469e8ef2c86cc8438ca29c2edb1a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 5o8jtvoneFQBZjwc9-qBM56C9wDEGHH3cXpirEbQ37opl8KB4pkzAg==
+      X-Amz-Cf-Pop:
+      - DFW56-P3
+      X-Cache:
+      - Miss from cloudfront
+      X-Powered-By:
+      - huggingface-moon
+      X-Repo-Commit:
+      - 14823c0a9eb143abd9cefd53699daeb639c68e6b
+      X-Request-Id:
+      - Root=1-674b6784-0c55f9a4604d639b0bdd18da;6489d384-9d03-4bfd-a0ca-e05c7ed84fb3
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      X-Amzn-Trace-Id:
+      - 9d71824b-0490-41d6-a7d1-971147e2d384
+      user-agent:
+      - datasets/3.1.0; hf_hub/0.26.3; python/3.10.12; torch/2.0.1+cu118; huggingface_hub/0.26.3;
+        pyarrow/18.1.0
+    method: HEAD
+    uri: https://huggingface.co/datasets/ChaiML/horror_data_formatted/resolve/14823c0a9eb143abd9cefd53699daeb639c68e6b/horror_data_formatted.py
+  response:
+    body:
+      string: ''
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '15'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Sat, 30 Nov 2024 19:29:08 GMT
+      ETag:
+      - W/"f-mY2VvLxuxB7KhsoOdQTlMTccuAQ"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      Via:
+      - 1.1 bc93469e8ef2c86cc8438ca29c2edb1a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - dxauXxXysgW_kT0RME4uCLtLzFWbgC0jX6_C2cfX_PMGwRQnXTOtmg==
+      X-Amz-Cf-Pop:
+      - DFW56-P3
+      X-Cache:
+      - Error from cloudfront
+      X-Error-Code:
+      - EntryNotFound
+      X-Error-Message:
+      - Entry not found
+      X-Powered-By:
+      - huggingface-moon
+      X-Repo-Commit:
+      - 14823c0a9eb143abd9cefd53699daeb639c68e6b
+      X-Request-Id:
+      - Root=1-674b6784-471cb0ab6012b08e39fe984e;9d71824b-0490-41d6-a7d1-971147e2d384
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 404
+      message: Not Found
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - datasets/3.1.0; python/3.10.12; huggingface_hub/0.26.3; pyarrow/18.1.0; torch/2.0.1+cu118
+      X-Amzn-Trace-Id:
+      - ea128def-8f2d-4ee3-9307-b62829364925
+    method: HEAD
+    uri: https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/ChaiML/horror_data_formatted/ChaiML/horror_data_formatted.py
+  response:
+    body:
+      string: ''
+    headers:
+      Content-Type:
+      - application/xml
+      Date:
+      - Sat, 30 Nov 2024 19:29:07 GMT
+      Server:
+      - AmazonS3
+      Transfer-Encoding:
+      - chunked
+      x-amz-id-2:
+      - tFlSXxI8jTnW4psQL3REZSwYXU9AmlntLTBurle3HERGSsCZkUMYzJuG1bndSzDT1cGg6lYUuPU=
+      x-amz-request-id:
+      - Q1SEFMAX15JVAPXG
+    status:
+      code: 404
+      message: Not Found
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      X-Amzn-Trace-Id:
+      - 684a88f6-d68a-4a16-aaa1-3d1a316a0c1b
+      user-agent:
+      - unknown/None; hf_hub/0.26.3; python/3.10.12; torch/2.0.1+cu118
+    method: GET
+    uri: https://huggingface.co/api/datasets/ChaiML/horror_data_formatted/revision/14823c0a9eb143abd9cefd53699daeb639c68e6b
+  response:
+    body:
+      string: '{"_id":"6707068a784e1c9901f1938e","id":"ChaiML/horror_data_formatted","author":"ChaiML","sha":"14823c0a9eb143abd9cefd53699daeb639c68e6b","lastModified":"2024-10-09T22:41:15.000Z","private":false,"gated":false,"disabled":false,"tags":["size_categories:n<1K","format:parquet","modality:text","library:datasets","library:pandas","library:mlcroissant","library:polars","region:us"],"downloads":65,"likes":0,"cardData":{"dataset_info":{"features":[{"name":"text","dtype":"string"}],"splits":[{"name":"train","num_bytes":709278,"num_examples":182}],"download_size":94465,"dataset_size":709278},"configs":[{"config_name":"default","data_files":[{"split":"train","path":"data/train-*"}]}]},"siblings":[{"rfilename":".gitattributes"},{"rfilename":"README.md"},{"rfilename":"data/train-00000-of-00001.parquet"}],"createdAt":"2024-10-09T22:41:14.000Z"}'
+    headers:
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '841'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 30 Nov 2024 19:29:08 GMT
+      ETag:
+      - W/"349-E+Ju+trTUq+4dzCJ/W6vDPZB5XI"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      Via:
+      - 1.1 bc93469e8ef2c86cc8438ca29c2edb1a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - mthN49Yu5qTakXmSoUHyX3G-Dw3jbV4nr6OB7CXf8LIC0RzutSgZuw==
+      X-Amz-Cf-Pop:
+      - DFW56-P3
+      X-Cache:
+      - Miss from cloudfront
+      X-Powered-By:
+      - huggingface-moon
+      X-Request-Id:
+      - Root=1-674b6784-79ba5f437668cf1d6f12956d;684a88f6-d68a-4a16-aaa1-3d1a316a0c1b
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      X-Amzn-Trace-Id:
+      - d4789847-12f2-472b-baf4-ac289e59a65a
+      user-agent:
+      - datasets/3.1.0; hf_hub/0.26.3; python/3.10.12; torch/2.0.1+cu118; huggingface_hub/0.26.3;
+        pyarrow/18.1.0
+    method: HEAD
+    uri: https://huggingface.co/datasets/ChaiML/horror_data_formatted/resolve/14823c0a9eb143abd9cefd53699daeb639c68e6b/.huggingface.yaml
+  response:
+    body:
+      string: ''
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '15'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Sat, 30 Nov 2024 19:29:08 GMT
+      ETag:
+      - W/"f-mY2VvLxuxB7KhsoOdQTlMTccuAQ"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      Via:
+      - 1.1 bc93469e8ef2c86cc8438ca29c2edb1a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - S2YC38aqxE44jmcPhbYlCsCNJY1ZT5ymu4DuzVZYb7Nf0SWXl63FGA==
+      X-Amz-Cf-Pop:
+      - DFW56-P3
+      X-Cache:
+      - Error from cloudfront
+      X-Error-Code:
+      - EntryNotFound
+      X-Error-Message:
+      - Entry not found
+      X-Powered-By:
+      - huggingface-moon
+      X-Repo-Commit:
+      - 14823c0a9eb143abd9cefd53699daeb639c68e6b
+      X-Request-Id:
+      - Root=1-674b6784-27adf242699eb5d741a83c9a;d4789847-12f2-472b-baf4-ac289e59a65a
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 404
+      message: Not Found
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      X-Amzn-Trace-Id:
+      - d2ee6fdd-5556-4dbe-8381-b061001a0189
+      user-agent:
+      - datasets/3.1.0; hf_hub/0.26.3; python/3.10.12; torch/2.0.1+cu118
+    method: GET
+    uri: https://datasets-server.huggingface.co/info?dataset=ChaiML/horror_data_formatted
+  response:
+    body:
+      string: !!binary |
+        H4sIAIRnS2cC/11Q0W7DIAz8F56jKau6tc2H7GWakBtM64kAA7O1q/rvMyFRpYmXu/PJ3PmmDDBk
+        ZE3eBjXclEELxXGDeUwUmYJXg1KdGonhwc5hwggnbMzRiD4vxCJwSZjrFsZL28bXWMeZE/mTmPQi
+        vIErqO73Th0LOYNJe5jqIEL6KshiXUMug3NIKSRdVW1DmoAZTc0XvKXT6lqbdOobU55j31aoJYVY
+        +id5YpjgMwjvBZFfUAQez4IkV46OuJVJQPOe5Y/GO+XLpI9Xro13/WGz2zcJLzBFV9Xn/eZ/DV+c
+        q61N+PEugNGZfkU+bLevLw9vE9vS6o7oTb3f8P4hdwZy0nzGci0mcGqw4DLe/wCPl+AN2gEAAA==
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 30 Nov 2024 19:29:08 GMT
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 dc0206aae598c7408d2c9a4028b591ac.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 13NS0PoXtCXzCJ7sF28LqK-FS3yBz03zto91YvPyXmG-YvwxQFMT3Q==
+      X-Amz-Cf-Pop:
+      - DFW57-P8
+      X-Cache:
+      - Miss from cloudfront
+      cache-control:
+      - max-age=120
+      content-encoding:
+      - gzip
+      server:
+      - uvicorn
+      vary:
+      - Accept-Encoding
+      x-revision:
+      - 14823c0a9eb143abd9cefd53699daeb639c68e6b
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      X-Amzn-Trace-Id:
+      - de142353-556b-46d5-9b10-8f07c7e86a8e
+      user-agent:
+      - unknown/None; hf_hub/0.26.3; python/3.10.12; torch/2.0.1+cu118
+    method: GET
+    uri: https://huggingface.co/api/datasets/ChaiML/horror_data_formatted/revision/14823c0a9eb143abd9cefd53699daeb639c68e6b
+  response:
+    body:
+      string: '{"_id":"6707068a784e1c9901f1938e","id":"ChaiML/horror_data_formatted","author":"ChaiML","sha":"14823c0a9eb143abd9cefd53699daeb639c68e6b","lastModified":"2024-10-09T22:41:15.000Z","private":false,"gated":false,"disabled":false,"tags":["size_categories:n<1K","format:parquet","modality:text","library:datasets","library:pandas","library:mlcroissant","library:polars","region:us"],"downloads":65,"likes":0,"cardData":{"dataset_info":{"features":[{"name":"text","dtype":"string"}],"splits":[{"name":"train","num_bytes":709278,"num_examples":182}],"download_size":94465,"dataset_size":709278},"configs":[{"config_name":"default","data_files":[{"split":"train","path":"data/train-*"}]}]},"siblings":[{"rfilename":".gitattributes"},{"rfilename":"README.md"},{"rfilename":"data/train-00000-of-00001.parquet"}],"createdAt":"2024-10-09T22:41:14.000Z"}'
+    headers:
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '841'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 30 Nov 2024 19:29:08 GMT
+      ETag:
+      - W/"349-E+Ju+trTUq+4dzCJ/W6vDPZB5XI"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      Via:
+      - 1.1 bc93469e8ef2c86cc8438ca29c2edb1a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - rdfrRYnTSnqPZfq6_pbCFCrA6WjiuIZNWGsPCMaxsPrXuVQ5KkBpBw==
+      X-Amz-Cf-Pop:
+      - DFW56-P3
+      X-Cache:
+      - Miss from cloudfront
+      X-Powered-By:
+      - huggingface-moon
+      X-Request-Id:
+      - Root=1-674b6784-5606205202646af04fe85864;de142353-556b-46d5-9b10-8f07c7e86a8e
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      X-Amzn-Trace-Id:
+      - 8423eb2d-e17e-496b-94cd-102341932ba9
+      user-agent:
+      - unknown/None; hf_hub/0.26.3; python/3.10.12; torch/2.0.1+cu118
+    method: GET
+    uri: https://huggingface.co/api/datasets/ChaiML/horror_data_formatted/tree/14823c0a9eb143abd9cefd53699daeb639c68e6b?recursive=False&expand=False
+  response:
+    body:
+      string: '[{"type":"directory","oid":"7c1e4a469c29c4373ec87137ab4e7e40244ef3d3","size":0,"path":"data"},{"type":"file","oid":"55cab133643a2a73e083373d2106533678d0edd5","size":2419,"path":".gitattributes"},{"type":"file","oid":"6322c10f2cc1c2436179a0a66189ead7442637e4","size":269,"path":"README.md"}]'
+    headers:
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '290'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 30 Nov 2024 19:29:08 GMT
+      ETag:
+      - W/"122-dfXzXRkw3usSNZj64eJyU45ADbI"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      Via:
+      - 1.1 bc93469e8ef2c86cc8438ca29c2edb1a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - M-9cNd8Db6KxEeUwjq8VOu78VbS5EonR9VtVT-VTDFr8H9cqxxkbNw==
+      X-Amz-Cf-Pop:
+      - DFW56-P3
+      X-Cache:
+      - Miss from cloudfront
+      X-Powered-By:
+      - huggingface-moon
+      X-Request-Id:
+      - Root=1-674b6784-5f7802d714b8e4f61f097beb;8423eb2d-e17e-496b-94cd-102341932ba9
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 200
+      message: OK
+- request:
+    body: paths=data&expand=True
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '22'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Amzn-Trace-Id:
+      - 9179ccd8-b279-4b30-a1ec-f57325b068a1
+      user-agent:
+      - unknown/None; hf_hub/0.26.3; python/3.10.12; torch/2.0.1+cu118
+    method: POST
+    uri: https://huggingface.co/api/datasets/ChaiML/horror_data_formatted/paths-info/14823c0a9eb143abd9cefd53699daeb639c68e6b
+  response:
+    body:
+      string: '[{"type":"directory","oid":"7c1e4a469c29c4373ec87137ab4e7e40244ef3d3","size":56,"path":"data","lastCommit":{"id":"14823c0a9eb143abd9cefd53699daeb639c68e6b","title":"Upload
+        dataset","date":"2024-10-09T22:41:15.000Z"}}]'
+    headers:
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '217'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 30 Nov 2024 19:29:09 GMT
+      ETag:
+      - W/"d9-tz924JxZPLPAyKAeR80m9iXlqNA"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      Via:
+      - 1.1 bc93469e8ef2c86cc8438ca29c2edb1a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - ymmMxrjYMPW_W8_hHlop_ZMmekMJh1c5QaBD0Re3JLkdjEXyZf--Pg==
+      X-Amz-Cf-Pop:
+      - DFW56-P3
+      X-Cache:
+      - Miss from cloudfront
+      X-Powered-By:
+      - huggingface-moon
+      X-Request-Id:
+      - Root=1-674b6785-65a5861c203834cd5d571636;9179ccd8-b279-4b30-a1ec-f57325b068a1
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      X-Amzn-Trace-Id:
+      - b6254b3f-6470-44d1-a983-c4feb9d8be3c
+      user-agent:
+      - unknown/None; hf_hub/0.26.3; python/3.10.12; torch/2.0.1+cu118
+    method: GET
+    uri: https://huggingface.co/api/datasets/ChaiML/horror_data_formatted/tree/14823c0a9eb143abd9cefd53699daeb639c68e6b/data?recursive=False&expand=False
+  response:
+    body:
+      string: '[{"type":"file","oid":"c319839563d96dbc2a784a24504591502287872d","size":94465,"lfs":{"oid":"d421a36eba01d5095603cf04105c3caad4c3e7f4d020d45b4fef3941c13b0af3","size":94465,"pointerSize":130},"path":"data/train-00000-of-00001.parquet"}]'
+    headers:
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '234'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 30 Nov 2024 19:29:09 GMT
+      ETag:
+      - W/"ea-m90PEJhrYz9RlPue7QaZkqNjyso"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      Via:
+      - 1.1 bc93469e8ef2c86cc8438ca29c2edb1a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 6tDDyaPBtdhxhkArHFuAX7iQCqgPsIdejtDEKp_R2O1p_NhFT7qnWg==
+      X-Amz-Cf-Pop:
+      - DFW56-P3
+      X-Cache:
+      - Miss from cloudfront
+      X-Powered-By:
+      - huggingface-moon
+      X-Request-Id:
+      - Root=1-674b6785-2f530740192a7b716a86cc7c;b6254b3f-6470-44d1-a983-c4feb9d8be3c
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      X-Amzn-Trace-Id:
+      - 93bc03c4-37cb-4b31-a79d-36e9b1aa170b
+      user-agent:
+      - unknown/None; hf_hub/0.26.3; python/3.10.12; torch/2.0.1+cu118
+    method: GET
+    uri: https://huggingface.co/api/datasets/ChaiML/horror_data_formatted/revision/14823c0a9eb143abd9cefd53699daeb639c68e6b
+  response:
+    body:
+      string: '{"_id":"6707068a784e1c9901f1938e","id":"ChaiML/horror_data_formatted","author":"ChaiML","sha":"14823c0a9eb143abd9cefd53699daeb639c68e6b","lastModified":"2024-10-09T22:41:15.000Z","private":false,"gated":false,"disabled":false,"tags":["size_categories:n<1K","format:parquet","modality:text","library:datasets","library:pandas","library:mlcroissant","library:polars","region:us"],"downloads":65,"likes":0,"cardData":{"dataset_info":{"features":[{"name":"text","dtype":"string"}],"splits":[{"name":"train","num_bytes":709278,"num_examples":182}],"download_size":94465,"dataset_size":709278},"configs":[{"config_name":"default","data_files":[{"split":"train","path":"data/train-*"}]}]},"siblings":[{"rfilename":".gitattributes"},{"rfilename":"README.md"},{"rfilename":"data/train-00000-of-00001.parquet"}],"createdAt":"2024-10-09T22:41:14.000Z"}'
+    headers:
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '841'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 30 Nov 2024 19:29:09 GMT
+      ETag:
+      - W/"349-E+Ju+trTUq+4dzCJ/W6vDPZB5XI"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      Via:
+      - 1.1 5c2c969e1efb957f3541c48cdf2f9d6a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - NWDgcy0vFGQU6lWMgGCNra792YTbHIJgGDqbPQDUm2yKji9bh5KdlQ==
+      X-Amz-Cf-Pop:
+      - DFW56-P3
+      X-Cache:
+      - Miss from cloudfront
+      X-Powered-By:
+      - huggingface-moon
+      X-Request-Id:
+      - Root=1-674b6785-6e06a5135fb0c1a36bcc80bd;93bc03c4-37cb-4b31-a79d-36e9b1aa170b
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      X-Amzn-Trace-Id:
+      - 8e5b25aa-8c11-46c2-8400-d27a996d1b33
+      user-agent:
+      - datasets/3.1.0; hf_hub/0.26.3; python/3.10.12; torch/2.0.1+cu118; huggingface_hub/0.26.3;
+        pyarrow/18.1.0
+    method: HEAD
+    uri: https://huggingface.co/datasets/ChaiML/horror_data_formatted/resolve/14823c0a9eb143abd9cefd53699daeb639c68e6b/dataset_infos.json
+  response:
+    body:
+      string: ''
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '15'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Sat, 30 Nov 2024 19:29:09 GMT
+      ETag:
+      - W/"f-mY2VvLxuxB7KhsoOdQTlMTccuAQ"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      Via:
+      - 1.1 bc93469e8ef2c86cc8438ca29c2edb1a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 4Ipz4ir9qPMhjOX6f83f6atV-CxNfXpOBWWT1Z5RQpMfe8ZykVny7g==
+      X-Amz-Cf-Pop:
+      - DFW56-P3
+      X-Cache:
+      - Error from cloudfront
+      X-Error-Code:
+      - EntryNotFound
+      X-Error-Message:
+      - Entry not found
+      X-Powered-By:
+      - huggingface-moon
+      X-Repo-Commit:
+      - 14823c0a9eb143abd9cefd53699daeb639c68e6b
+      X-Request-Id:
+      - Root=1-674b6785-7952226c7d3083ad05c35310;8e5b25aa-8c11-46c2-8400-d27a996d1b33
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 404
+      message: Not Found
+- request:
+    body: paths=data&expand=True
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '22'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Amzn-Trace-Id:
+      - 6095ce38-fcb0-44bc-a31b-c57cc7f1d912
+      user-agent:
+      - unknown/None; hf_hub/0.26.3; python/3.10.12; torch/2.0.1+cu118
+    method: POST
+    uri: https://huggingface.co/api/datasets/ChaiML/horror_data_formatted/paths-info/14823c0a9eb143abd9cefd53699daeb639c68e6b
+  response:
+    body:
+      string: '[{"type":"directory","oid":"7c1e4a469c29c4373ec87137ab4e7e40244ef3d3","size":56,"path":"data","lastCommit":{"id":"14823c0a9eb143abd9cefd53699daeb639c68e6b","title":"Upload
+        dataset","date":"2024-10-09T22:41:15.000Z"}}]'
+    headers:
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '217'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 30 Nov 2024 19:29:09 GMT
+      ETag:
+      - W/"d9-tz924JxZPLPAyKAeR80m9iXlqNA"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      Via:
+      - 1.1 bc93469e8ef2c86cc8438ca29c2edb1a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - RM85eeRgWTgdc_NEAlnM00eHVJkJ-OpFmBBwhtlR6GYvKx1F8Cib4A==
+      X-Amz-Cf-Pop:
+      - DFW56-P3
+      X-Cache:
+      - Miss from cloudfront
+      X-Powered-By:
+      - huggingface-moon
+      X-Request-Id:
+      - Root=1-674b6785-6008d35876e7b25575a050cd;6095ce38-fcb0-44bc-a31b-c57cc7f1d912
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 200
+      message: OK
+version: 1

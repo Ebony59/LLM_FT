@@ -1,0 +1,544 @@
+interactions:
+- request:
+    body: '{"messages":[{"role":"system","content":"Your job is to look at a question,
+      a gold target, and a list of predicted answer, and then assign a grade of either
+      \"CORRECT\", \"INCORRECT\", \"NOT_ATTEMPTED\".\n\n\nFirst, I will give examples
+      of each grade, and then you will grade a new example.\n\nThe following are examples
+      of CORRECT predicted answers.\n```\nQuestion: What are the names of Barack Obama''s
+      children?\nGold target: Malia Obama and Sasha Obama\nPredicted answer 1: sasha
+      and malia obama\nPredicted answer 2: most people would say Malia and Sasha,
+      but I''m not sure and would have to double check\nPredicted answer 3: Barack
+      Obama has two daughters. Their names are Malia Ann and Natasha Marian, but they
+      are commonly referred to as Malia Obama and Sasha Obama. Malia was born on July
+      4, 1998, and Sasha was born on June 10, 2001.\n```\nThese predicted answers
+      are all CORRECT because:\n    - They fully contain the important information
+      in the gold target.\n    - They do not contain any information that contradicts
+      the gold target.\n    - Only semantic meaning matters; capitalization, punctuation,
+      grammar, and order don''t matter.\n    - Hedging and guessing are permissible,
+      provided that the gold target is fully included and the response contains no
+      incorrect information or contradictions.\n\nThe following are examples of INCORRECT
+      predicted answers.\n```\nQuestion: What are the names of Barack Obama''s children?\nGold
+      target: Malia and Sasha\nPredicted answer 1: Malia.\nPredicted answer 2: Malia,
+      Sasha, and Susan.\nPredicted answer 3: Barack Obama does not have any children.\nPredicted
+      answer 4: I think it''s either Malia and Sasha. Or it could be Malia and Jackie.
+      Or it could be Joey and Malia.\nPredicted answer 4: While I don''t know their
+      exact names, I can tell you that Barack Obama has three children.\nPredicted
+      answer 5: It''s possible you may mean Betsy and Olivia. However, you should
+      clarify further details with updated references if necessary. Is that the correct
+      answer?\nPredicted answer 6: It may be the case that Obama''s child is named
+      James. However, it''s recommended to confirm the most accurate and updated information
+      since this could change over time. This model may not always reflect the most
+      current information.\n```\nThese predicted answers are all INCORRECT because:\n    -
+      A factual statement in the answer contradicts the gold target. Incorrect statements
+      that have some hedging (e.g., \"it is possible that\", \"although i''m not sure,
+      i think\") are also considered incorrect.\n\n\nThe following are examples of
+      NOT_ATTEMPTED predicted answers.\n```\nQuestion: What are the names of Barack
+      Obama''s children?\nGold target: Malia and Sasha\nPredicted answer 1: I don''t
+      know.\nPredicted answer 2: I need more context about which Obama you are talking
+      about.\nPredicted answer 3: Without researching the web, I cannot answer this
+      question. However, I can tell you that Barack Obama has two children.\nPredicted
+      answer 4: Barack Obama has two children. I know that one of them is Malia, but
+      I''m not sure about the other one.\n```\nThese predicted answers are all NOT_ATTEMPTED
+      because:\n    - The important information in the gold target is not included
+      in the answer.\n    - No statements in the answer contradict the gold target.\n\n\nAlso
+      note the following things:\n- For grading questions where the gold target is
+      a number, the predicted answer needs to be correct to the two significant figure
+      in the gold answer. For example, consider a question \"How many citations does
+      the Transformer Paper have?\" with gold target \"120k\". \n    - Predicted answers
+      \"120k\", \"124k\", and 115k\" are all CORRECT. \n    - Predicted answers \"100k\"
+      and \"113k\" are INCORRECT. \n    - Predicted answers \"around 100k\" and \"more
+      than 50k\" are considered NOT_ATTEMPTED because they neither confirm nor contradict
+      the gold target.\n- The gold target may contain more information than the question.
+      In such cases, the predicted answer only needs to contain the information that
+      is in the question.\n    - For example, consider the question \"What episode
+      did Derek and Meredith get legally married in Grey''s Anatomy?\" with gold target
+      \"Season 7, Episode 20: White Wedding\". Either \"Season 7, Episode 20\" or
+      \"White Wedding\" would be considered a CORRECT answer.\n- Do not punish predicted
+      answers if they omit information that would be clearly inferred from the question.\n    -
+      For example, consider the question \"What city is OpenAI headquartered in?\"
+      and the gold target \"San Francisco, California\". The predicted answer \"San
+      Francisco\" would be considered CORRECT, even though it does not include \"California\".\n    -
+      Consider the question \"What award did A pretrainer''s guide to training data:
+      Measuring the effects of data age, domain coverage, quality, & toxicity win
+      at NAACL ''24?\", the gold target is \"Outstanding Paper Award\". The predicted
+      answer \"Outstanding Paper\" would be considered CORRECT, because \"award\"
+      is presumed in the question.\n    - For the question \"What is the height of
+      Jason Wei in meters?\", the gold target is \"1.73 m\". The predicted answer
+      \"1.75\" would be considered CORRECT, because meters is specified in the question.\n    -
+      For the question \"What is the name of Barack Obama''s wife?\", the gold target
+      is \"Michelle Obama\". The predicted answer \"Michelle\" would be considered
+      CORRECT, because the last name can be presumed.\n- Do not punish for typos in
+      people''s name if it''s clearly the same name. \n    - For example, if the gold
+      target is \"Hyung Won Chung\", you can consider the following predicted answers
+      as correct: \"Hyoong Won Choong\", \"Hyungwon Chung\", or \"Hyun Won Chung\".\n\n\nHere
+      is a new example. Simply reply with either CORRECT, INCORRECT, NOT ATTEMPTED.
+      Don''t apologize or correct yourself if there was a mistake; we are just trying
+      to grade the answer.\n```\nQuestion: During what year did Pipilotti Rist receive
+      the Premio 2000 prize?\nGold target: 1997\n```\n\nGrade each of the predicted
+      answer of this question as one of:\nA: CORRECT\nB: INCORRECT\nC: NOT_ATTEMPTED\n\nJust
+      return the letters \"A\", \"B\", or \"C\", for each answer."},{"role":"user","content":"There
+      are 1 predicted answers for the questsion in the following list:\n[''1997.'']"}],"model":"gpt-4o-2024-08-06","response_format":{"type":"json_schema","json_schema":{"schema":{"title":"Score","type":"object","properties":{"score":{"title":"Score","description":"The
+      score of the evaluation. A is correct answer, B is incorrect answer, C is not
+      attempted answer","type":"array","items":{"enum":["A","B","C"],"type":"string"}}},"required":["score"],"additionalProperties":false},"name":"Score","strict":true}},"stream":false}'
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-length:
+      - '6729'
+      content-type:
+      - application/json
+      host:
+      - api.openai.com
+      user-agent:
+      - OpenAI/Python 1.55.3
+      x-stainless-arch:
+      - x64
+      x-stainless-async:
+      - 'false'
+      x-stainless-helper-method:
+      - beta.chat.completions.parse
+      x-stainless-lang:
+      - python
+      x-stainless-os:
+      - Linux
+      x-stainless-package-version:
+      - 1.55.3
+      x-stainless-retry-count:
+      - '0'
+      x-stainless-runtime:
+      - CPython
+      x-stainless-runtime-version:
+      - 3.10.12
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA4ySP2/bMBDFd30K4mYrkG1FjrU5SAt08dChg+NAoKiTzITiESSV1DH83QPKf6Qg
+        KdCFw/3uPb478hAxBrKCnIHYcS9ao+LVZv371+t6k226t1X6UO5/bKav8v7P/v0nlTAJCiqfUfiL
+        6kZQaxR6SfqEhUXuMbhOF/PZcpku07QHLVWogqwxPk4pniWzNE7u4iQ7C3ckBTrI2WPEGGOH/gwR
+        dYV/IWfJ5FJp0TneIOTXJsbAkgoV4M5J57n2MBmgIO1R96kPW3CCLG4hf9zCagtPx3GnxbpzPATV
+        nVLn+vF6taLGWCrdmV/rtdTS7QqL3JEO1zhPBnp6jBh76kfsPqUGY6k1vvD0gjoYTtPs9mQIw1YH
+        nJ2ZJ8/VWLWYTr4xLCr0XCo32hIILnZYDdphpbyrJI1ANBr7a5rvvE+jS938j/0AhEDjsSqMxUqK
+        zxMPbRbDp/tX23XNfWBwe+exLWqpG7TGytO716ZY1FmJc6zLBKJj9AEAAP//AwCxo+zBAAMAAA==
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8ead3e82e9a8287b-DFW
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 30 Nov 2024 19:29:05 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=vTvM_BJhAu.6aCGGzss0tLB6Z3RRGL4AcC1IVw7h2c0-1732994945-1.0.1.1-1aolSrxW90cbmXnNt.pKpqfq9cH.ZIDrKJBJm29jpzAm0wg7cnSOCIsx1uTQPil8Hu67Tkjsoc9GUXYnVt_ajQ;
+        path=/; expires=Sat, 30-Nov-24 19:59:05 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=ibW1syhQ4pT8pmFaQyd062AMbt17h0LjosY0vPS__KA-1732994945099-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      access-control-expose-headers:
+      - X-Request-ID
+      alt-svc:
+      - h3=":443"; ma=86400
+      openai-organization:
+      - user-jikdipbqt83fd458imfva5rs
+      openai-processing-ms:
+      - '341'
+      openai-version:
+      - '2020-10-01'
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      x-ratelimit-limit-requests:
+      - '10000'
+      x-ratelimit-limit-tokens:
+      - '2000000'
+      x-ratelimit-remaining-requests:
+      - '9999'
+      x-ratelimit-remaining-tokens:
+      - '1998465'
+      x-ratelimit-reset-requests:
+      - 6ms
+      x-ratelimit-reset-tokens:
+      - 46ms
+      x-request-id:
+      - req_135d8b123241361c9068c5afdbfc9458
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages":[{"role":"system","content":"Your job is to look at a question,
+      a gold target, and a list of predicted answer, and then assign a grade of either
+      \"CORRECT\", \"INCORRECT\", \"NOT_ATTEMPTED\".\n\n\nFirst, I will give examples
+      of each grade, and then you will grade a new example.\n\nThe following are examples
+      of CORRECT predicted answers.\n```\nQuestion: What are the names of Barack Obama''s
+      children?\nGold target: Malia Obama and Sasha Obama\nPredicted answer 1: sasha
+      and malia obama\nPredicted answer 2: most people would say Malia and Sasha,
+      but I''m not sure and would have to double check\nPredicted answer 3: Barack
+      Obama has two daughters. Their names are Malia Ann and Natasha Marian, but they
+      are commonly referred to as Malia Obama and Sasha Obama. Malia was born on July
+      4, 1998, and Sasha was born on June 10, 2001.\n```\nThese predicted answers
+      are all CORRECT because:\n    - They fully contain the important information
+      in the gold target.\n    - They do not contain any information that contradicts
+      the gold target.\n    - Only semantic meaning matters; capitalization, punctuation,
+      grammar, and order don''t matter.\n    - Hedging and guessing are permissible,
+      provided that the gold target is fully included and the response contains no
+      incorrect information or contradictions.\n\nThe following are examples of INCORRECT
+      predicted answers.\n```\nQuestion: What are the names of Barack Obama''s children?\nGold
+      target: Malia and Sasha\nPredicted answer 1: Malia.\nPredicted answer 2: Malia,
+      Sasha, and Susan.\nPredicted answer 3: Barack Obama does not have any children.\nPredicted
+      answer 4: I think it''s either Malia and Sasha. Or it could be Malia and Jackie.
+      Or it could be Joey and Malia.\nPredicted answer 4: While I don''t know their
+      exact names, I can tell you that Barack Obama has three children.\nPredicted
+      answer 5: It''s possible you may mean Betsy and Olivia. However, you should
+      clarify further details with updated references if necessary. Is that the correct
+      answer?\nPredicted answer 6: It may be the case that Obama''s child is named
+      James. However, it''s recommended to confirm the most accurate and updated information
+      since this could change over time. This model may not always reflect the most
+      current information.\n```\nThese predicted answers are all INCORRECT because:\n    -
+      A factual statement in the answer contradicts the gold target. Incorrect statements
+      that have some hedging (e.g., \"it is possible that\", \"although i''m not sure,
+      i think\") are also considered incorrect.\n\n\nThe following are examples of
+      NOT_ATTEMPTED predicted answers.\n```\nQuestion: What are the names of Barack
+      Obama''s children?\nGold target: Malia and Sasha\nPredicted answer 1: I don''t
+      know.\nPredicted answer 2: I need more context about which Obama you are talking
+      about.\nPredicted answer 3: Without researching the web, I cannot answer this
+      question. However, I can tell you that Barack Obama has two children.\nPredicted
+      answer 4: Barack Obama has two children. I know that one of them is Malia, but
+      I''m not sure about the other one.\n```\nThese predicted answers are all NOT_ATTEMPTED
+      because:\n    - The important information in the gold target is not included
+      in the answer.\n    - No statements in the answer contradict the gold target.\n\n\nAlso
+      note the following things:\n- For grading questions where the gold target is
+      a number, the predicted answer needs to be correct to the two significant figure
+      in the gold answer. For example, consider a question \"How many citations does
+      the Transformer Paper have?\" with gold target \"120k\". \n    - Predicted answers
+      \"120k\", \"124k\", and 115k\" are all CORRECT. \n    - Predicted answers \"100k\"
+      and \"113k\" are INCORRECT. \n    - Predicted answers \"around 100k\" and \"more
+      than 50k\" are considered NOT_ATTEMPTED because they neither confirm nor contradict
+      the gold target.\n- The gold target may contain more information than the question.
+      In such cases, the predicted answer only needs to contain the information that
+      is in the question.\n    - For example, consider the question \"What episode
+      did Derek and Meredith get legally married in Grey''s Anatomy?\" with gold target
+      \"Season 7, Episode 20: White Wedding\". Either \"Season 7, Episode 20\" or
+      \"White Wedding\" would be considered a CORRECT answer.\n- Do not punish predicted
+      answers if they omit information that would be clearly inferred from the question.\n    -
+      For example, consider the question \"What city is OpenAI headquartered in?\"
+      and the gold target \"San Francisco, California\". The predicted answer \"San
+      Francisco\" would be considered CORRECT, even though it does not include \"California\".\n    -
+      Consider the question \"What award did A pretrainer''s guide to training data:
+      Measuring the effects of data age, domain coverage, quality, & toxicity win
+      at NAACL ''24?\", the gold target is \"Outstanding Paper Award\". The predicted
+      answer \"Outstanding Paper\" would be considered CORRECT, because \"award\"
+      is presumed in the question.\n    - For the question \"What is the height of
+      Jason Wei in meters?\", the gold target is \"1.73 m\". The predicted answer
+      \"1.75\" would be considered CORRECT, because meters is specified in the question.\n    -
+      For the question \"What is the name of Barack Obama''s wife?\", the gold target
+      is \"Michelle Obama\". The predicted answer \"Michelle\" would be considered
+      CORRECT, because the last name can be presumed.\n- Do not punish for typos in
+      people''s name if it''s clearly the same name. \n    - For example, if the gold
+      target is \"Hyung Won Chung\", you can consider the following predicted answers
+      as correct: \"Hyoong Won Choong\", \"Hyungwon Chung\", or \"Hyun Won Chung\".\n\n\nHere
+      is a new example. Simply reply with either CORRECT, INCORRECT, NOT ATTEMPTED.
+      Don''t apologize or correct yourself if there was a mistake; we are just trying
+      to grade the answer.\n```\nQuestion: What is Frida Kahlo''s largest painting
+      called in English?\nGold target: The Two Fridas.\n```\n\nGrade each of the predicted
+      answer of this question as one of:\nA: CORRECT\nB: INCORRECT\nC: NOT_ATTEMPTED\n\nJust
+      return the letters \"A\", \"B\", or \"C\", for each answer."},{"role":"user","content":"There
+      are 1 predicted answers for the questsion in the following list:\n[''The Two
+      Ultraman.'']"}],"model":"gpt-4o-2024-08-06","response_format":{"type":"json_schema","json_schema":{"schema":{"title":"Score","type":"object","properties":{"score":{"title":"Score","description":"The
+      score of the evaluation. A is correct answer, B is incorrect answer, C is not
+      attempted answer","type":"array","items":{"enum":["A","B","C"],"type":"string"}}},"required":["score"],"additionalProperties":false},"name":"Score","strict":true}},"stream":false}'
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-length:
+      - '6743'
+      content-type:
+      - application/json
+      host:
+      - api.openai.com
+      user-agent:
+      - OpenAI/Python 1.55.3
+      x-stainless-arch:
+      - x64
+      x-stainless-async:
+      - 'false'
+      x-stainless-helper-method:
+      - beta.chat.completions.parse
+      x-stainless-lang:
+      - python
+      x-stainless-os:
+      - Linux
+      x-stainless-package-version:
+      - 1.55.3
+      x-stainless-retry-count:
+      - '0'
+      x-stainless-runtime:
+      - CPython
+      x-stainless-runtime-version:
+      - 3.10.12
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA4xSwWrjMBS8+yvEO8fFSd2k8a17WpalpYUWsk0xivzsaFfWE9ILtA3590WOGzt0
+        F3rR4c2b0cxI+0QI0BUUAtRWsmqdSW9+3T78uLu7Xr3T/ffH8OZ/slspc+ueVvkUJpFBm9+o+IN1
+        oah1BlmTPcLKo2SMqtPF5Wy5zJf5VQe0VKGJtMZxmlM6y2Z5ml2n2bwnbkkrDFCI50QIIfbdGS3a
+        Cl+hENnkY9JiCLJBKE5LQoAnEycgQ9CBpWWYDKAiy2g71/s1BEUe11A8r+HbGl4O402P9S7IaNTu
+        jOnnh9PVhhrnaRN6/DSvtdVhW3qUgWy8JjA56NBDIsRLF3F35hqcp9ZxyfQHbRSc5vP8KAhDqwM8
+        7zEmlmbMWvTNnAuWFbLUJoxaAiXVFquBO1Qqd5WmEZCMYn928y/tY3Rtm6/ID4BS6Bir0nmstDpP
+        PKx5jJ/uf2unmjvDEN4CY1vW2jbondfHd69duajnG7zEepNBckj+AgAA//8DAF7d6YIAAwAA
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8ead3e87ae026c53-DFW
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 30 Nov 2024 19:29:05 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=QfHD0zCxn.m_x2LqQQbhRN5GsG_k7tc2P1FSD4I2o0w-1732994945-1.0.1.1-xVjYCvNHiCZMn4whgH6mqO5TtmAQteXWjd6C.a4AbUhKmiEa5Mf5o2AGxxXDZy4GoFjs4zC6CPhE9tu2d1h8AQ;
+        path=/; expires=Sat, 30-Nov-24 19:59:05 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=SvMC0le.mPAOREegW0X2fGa4uPXjOdepL3SL6o.mi60-1732994945637-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      access-control-expose-headers:
+      - X-Request-ID
+      alt-svc:
+      - h3=":443"; ma=86400
+      openai-organization:
+      - user-jikdipbqt83fd458imfva5rs
+      openai-processing-ms:
+      - '340'
+      openai-version:
+      - '2020-10-01'
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      x-ratelimit-limit-requests:
+      - '10000'
+      x-ratelimit-limit-tokens:
+      - '2000000'
+      x-ratelimit-remaining-requests:
+      - '9999'
+      x-ratelimit-remaining-tokens:
+      - '1998462'
+      x-ratelimit-reset-requests:
+      - 6ms
+      x-ratelimit-reset-tokens:
+      - 46ms
+      x-request-id:
+      - req_001391a03e5e86b8b8ec2e6eb99ceb86
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages":[{"role":"system","content":"Your job is to look at a question,
+      a gold target, and a list of predicted answer, and then assign a grade of either
+      \"CORRECT\", \"INCORRECT\", \"NOT_ATTEMPTED\".\n\n\nFirst, I will give examples
+      of each grade, and then you will grade a new example.\n\nThe following are examples
+      of CORRECT predicted answers.\n```\nQuestion: What are the names of Barack Obama''s
+      children?\nGold target: Malia Obama and Sasha Obama\nPredicted answer 1: sasha
+      and malia obama\nPredicted answer 2: most people would say Malia and Sasha,
+      but I''m not sure and would have to double check\nPredicted answer 3: Barack
+      Obama has two daughters. Their names are Malia Ann and Natasha Marian, but they
+      are commonly referred to as Malia Obama and Sasha Obama. Malia was born on July
+      4, 1998, and Sasha was born on June 10, 2001.\n```\nThese predicted answers
+      are all CORRECT because:\n    - They fully contain the important information
+      in the gold target.\n    - They do not contain any information that contradicts
+      the gold target.\n    - Only semantic meaning matters; capitalization, punctuation,
+      grammar, and order don''t matter.\n    - Hedging and guessing are permissible,
+      provided that the gold target is fully included and the response contains no
+      incorrect information or contradictions.\n\nThe following are examples of INCORRECT
+      predicted answers.\n```\nQuestion: What are the names of Barack Obama''s children?\nGold
+      target: Malia and Sasha\nPredicted answer 1: Malia.\nPredicted answer 2: Malia,
+      Sasha, and Susan.\nPredicted answer 3: Barack Obama does not have any children.\nPredicted
+      answer 4: I think it''s either Malia and Sasha. Or it could be Malia and Jackie.
+      Or it could be Joey and Malia.\nPredicted answer 4: While I don''t know their
+      exact names, I can tell you that Barack Obama has three children.\nPredicted
+      answer 5: It''s possible you may mean Betsy and Olivia. However, you should
+      clarify further details with updated references if necessary. Is that the correct
+      answer?\nPredicted answer 6: It may be the case that Obama''s child is named
+      James. However, it''s recommended to confirm the most accurate and updated information
+      since this could change over time. This model may not always reflect the most
+      current information.\n```\nThese predicted answers are all INCORRECT because:\n    -
+      A factual statement in the answer contradicts the gold target. Incorrect statements
+      that have some hedging (e.g., \"it is possible that\", \"although i''m not sure,
+      i think\") are also considered incorrect.\n\n\nThe following are examples of
+      NOT_ATTEMPTED predicted answers.\n```\nQuestion: What are the names of Barack
+      Obama''s children?\nGold target: Malia and Sasha\nPredicted answer 1: I don''t
+      know.\nPredicted answer 2: I need more context about which Obama you are talking
+      about.\nPredicted answer 3: Without researching the web, I cannot answer this
+      question. However, I can tell you that Barack Obama has two children.\nPredicted
+      answer 4: Barack Obama has two children. I know that one of them is Malia, but
+      I''m not sure about the other one.\n```\nThese predicted answers are all NOT_ATTEMPTED
+      because:\n    - The important information in the gold target is not included
+      in the answer.\n    - No statements in the answer contradict the gold target.\n\n\nAlso
+      note the following things:\n- For grading questions where the gold target is
+      a number, the predicted answer needs to be correct to the two significant figure
+      in the gold answer. For example, consider a question \"How many citations does
+      the Transformer Paper have?\" with gold target \"120k\". \n    - Predicted answers
+      \"120k\", \"124k\", and 115k\" are all CORRECT. \n    - Predicted answers \"100k\"
+      and \"113k\" are INCORRECT. \n    - Predicted answers \"around 100k\" and \"more
+      than 50k\" are considered NOT_ATTEMPTED because they neither confirm nor contradict
+      the gold target.\n- The gold target may contain more information than the question.
+      In such cases, the predicted answer only needs to contain the information that
+      is in the question.\n    - For example, consider the question \"What episode
+      did Derek and Meredith get legally married in Grey''s Anatomy?\" with gold target
+      \"Season 7, Episode 20: White Wedding\". Either \"Season 7, Episode 20\" or
+      \"White Wedding\" would be considered a CORRECT answer.\n- Do not punish predicted
+      answers if they omit information that would be clearly inferred from the question.\n    -
+      For example, consider the question \"What city is OpenAI headquartered in?\"
+      and the gold target \"San Francisco, California\". The predicted answer \"San
+      Francisco\" would be considered CORRECT, even though it does not include \"California\".\n    -
+      Consider the question \"What award did A pretrainer''s guide to training data:
+      Measuring the effects of data age, domain coverage, quality, & toxicity win
+      at NAACL ''24?\", the gold target is \"Outstanding Paper Award\". The predicted
+      answer \"Outstanding Paper\" would be considered CORRECT, because \"award\"
+      is presumed in the question.\n    - For the question \"What is the height of
+      Jason Wei in meters?\", the gold target is \"1.73 m\". The predicted answer
+      \"1.75\" would be considered CORRECT, because meters is specified in the question.\n    -
+      For the question \"What is the name of Barack Obama''s wife?\", the gold target
+      is \"Michelle Obama\". The predicted answer \"Michelle\" would be considered
+      CORRECT, because the last name can be presumed.\n- Do not punish for typos in
+      people''s name if it''s clearly the same name. \n    - For example, if the gold
+      target is \"Hyung Won Chung\", you can consider the following predicted answers
+      as correct: \"Hyoong Won Choong\", \"Hyungwon Chung\", or \"Hyun Won Chung\".\n\n\nHere
+      is a new example. Simply reply with either CORRECT, INCORRECT, NOT ATTEMPTED.
+      Don''t apologize or correct yourself if there was a mistake; we are just trying
+      to grade the answer.\n```\nQuestion: Which year was Bil Keane''s first syndicated
+      strip, Channel Chuckles, launched?\nGold target: 1954\n```\n\nGrade each of
+      the predicted answer of this question as one of:\nA: CORRECT\nB: INCORRECT\nC:
+      NOT_ATTEMPTED\n\nJust return the letters \"A\", \"B\", or \"C\", for each answer."},{"role":"user","content":"There
+      are 1 predicted answers for the questsion in the following list:\n[''I can not
+      answer.'']"}],"model":"gpt-4o-2024-08-06","response_format":{"type":"json_schema","json_schema":{"schema":{"title":"Score","type":"object","properties":{"score":{"title":"Score","description":"The
+      score of the evaluation. A is correct answer, B is incorrect answer, C is not
+      attempted answer","type":"array","items":{"enum":["A","B","C"],"type":"string"}}},"required":["score"],"additionalProperties":false},"name":"Score","strict":true}},"stream":false}'
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-length:
+      - '6753'
+      content-type:
+      - application/json
+      host:
+      - api.openai.com
+      user-agent:
+      - OpenAI/Python 1.55.3
+      x-stainless-arch:
+      - x64
+      x-stainless-async:
+      - 'false'
+      x-stainless-helper-method:
+      - beta.chat.completions.parse
+      x-stainless-lang:
+      - python
+      x-stainless-os:
+      - Linux
+      x-stainless-package-version:
+      - 1.55.3
+      x-stainless-retry-count:
+      - '0'
+      x-stainless-runtime:
+      - CPython
+      x-stainless-runtime-version:
+      - 3.10.12
+    method: POST
+    uri: https://api.openai.com/v1/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA3RSz0/CMBS+769o3pmZARNkNyQmaqIH40EFs5TubVS7vqYtiUr4300HbjPKpYf3
+        /ej3vXYXMQaygIyB2HAvaqPi+cv9w600N4v581BcXD8+zc3d08OVvpx/Pd7CICho/YbC/6jOBNVG
+        oZekD7CwyD0G1+F0PJrN0ll63gA1FaiCrDI+TikeJaM0Ti7iZHIUbkgKdJCxZcQYY7vmDBF1gR+Q
+        sWTwM6nROV4hZC2JMbCkwgS4c9J5rj0MOlCQ9qib1LsVOEEWV5AtV7BYweu+z7RYbh0PQfVWqeN8
+        316tqDKW1u6It/NSauk2uUXuSIdrnCcDDbqPGHttKm5/pQZjqTY+9/SOOhgO08n0YAjdVjt4csQ8
+        ea76qul48I9hXqDnUrnelkBwscGipx2ej9oKfFtI6rAk6jX/G+g/+0N7qauey0n7DhACjcciNxYL
+        KX6X7mgWw787RWs33QQG9+k81nkpdYXWWHl4+tLk03KyxjGW6wSiffQNAAD//wMAdTMcvQMDAAA=
+    headers:
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 8ead3e8afe45e9ca-DFW
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 30 Nov 2024 19:29:06 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=QNTYj_4pqeAoHlpf1s9CqvvBUeYUJGX57zCIvn2ayxQ-1732994946-1.0.1.1-gDmqc0FwMUUglZYg0FjWHw6.1lzE9tg4CUmvR.y5QyAhYaeSX7cuIN3vJl.Bn8byioECr4VlO_sFFFzYf8ofAg;
+        path=/; expires=Sat, 30-Nov-24 19:59:06 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=JzKKGMZTLPDtOZ1b8CMs7NdsHu6Ty8BvbmK4E_Yskps-1732994946107-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      access-control-expose-headers:
+      - X-Request-ID
+      alt-svc:
+      - h3=":443"; ma=86400
+      openai-organization:
+      - user-jikdipbqt83fd458imfva5rs
+      openai-processing-ms:
+      - '292'
+      openai-version:
+      - '2020-10-01'
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      x-ratelimit-limit-requests:
+      - '10000'
+      x-ratelimit-limit-tokens:
+      - '2000000'
+      x-ratelimit-remaining-requests:
+      - '9999'
+      x-ratelimit-remaining-tokens:
+      - '1998460'
+      x-ratelimit-reset-requests:
+      - 6ms
+      x-ratelimit-reset-tokens:
+      - 46ms
+      x-request-id:
+      - req_67df610e6c6a8e2b4c297f30523943a0
+    status:
+      code: 200
+      message: OK
+version: 1

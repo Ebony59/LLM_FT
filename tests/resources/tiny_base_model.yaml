@@ -1,0 +1,185 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      user-agent:
+      - unknown/None; hf_hub/0.26.3; python/3.10.12; torch/2.0.1+cu118; transformers/4.45.2;
+        session_id/e0c4d9591a634b64a0216d17ad5264b2
+    method: HEAD
+    uri: https://huggingface.co/HuggingFaceM4/tiny-random-MistralForCausalLM/resolve/main/config.json
+  response:
+    body:
+      string: ''
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - inline; filename*=UTF-8''config.json; filename="config.json";
+      Content-Length:
+      - '612'
+      Content-Security-Policy:
+      - default-src 'none'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Sat, 30 Nov 2024 19:29:02 GMT
+      ETag:
+      - '"5540c119241f530b5ebf3a643dc10aba940161cb"'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      Via:
+      - 1.1 8b40d2318598b57f3a4cb29b2f0fb820.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - hNuf8a6-Ssa_2IvFoMqaFr8InvpcKTmoEH6rjHNJnn_jn4V4h-5Wcg==
+      X-Amz-Cf-Pop:
+      - DFW56-P3
+      X-Cache:
+      - Miss from cloudfront
+      X-Powered-By:
+      - huggingface-moon
+      X-Repo-Commit:
+      - 687d960c4d20b757867bb3284cf1a55d88e6c348
+      X-Request-Id:
+      - Root=1-674b677e-447dd3ef6915ff45557ff64b;285afb9b-0e1e-48d3-a6dc-e2d20193ef20
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - unknown/None; hf_hub/0.26.3; python/3.10.12; torch/2.0.1+cu118; transformers/4.45.2;
+        session_id/e0c4d9591a634b64a0216d17ad5264b2
+    method: HEAD
+    uri: https://huggingface.co/HuggingFaceM4/tiny-random-MistralForCausalLM/resolve/main/model.safetensors
+  response:
+    body:
+      string: ''
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '15'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Sat, 30 Nov 2024 19:29:02 GMT
+      ETag:
+      - W/"f-mY2VvLxuxB7KhsoOdQTlMTccuAQ"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      Via:
+      - 1.1 8b40d2318598b57f3a4cb29b2f0fb820.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 6O5vPzAHf6K98HF6n7Kr_d-31PYd8KJGlAY1d4AHJszUKpGoRhhdSw==
+      X-Amz-Cf-Pop:
+      - DFW56-P3
+      X-Cache:
+      - Error from cloudfront
+      X-Error-Code:
+      - EntryNotFound
+      X-Error-Message:
+      - Entry not found
+      X-Powered-By:
+      - huggingface-moon
+      X-Repo-Commit:
+      - 687d960c4d20b757867bb3284cf1a55d88e6c348
+      X-Request-Id:
+      - Root=1-674b677e-349431344b66dec47947bdc0;7d6b1e27-be66-4572-9518-7bd7aa5d68d1
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 404
+      message: Not Found
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - identity
+      Connection:
+      - keep-alive
+      user-agent:
+      - unknown/None; hf_hub/0.26.3; python/3.10.12; torch/2.0.1+cu118; transformers/4.45.2;
+        session_id/e0c4d9591a634b64a0216d17ad5264b2; file_type/config; from_auto_class/False
+    method: HEAD
+    uri: https://huggingface.co/HuggingFaceM4/tiny-random-MistralForCausalLM/resolve/main/generation_config.json
+  response:
+    body:
+      string: ''
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - https://huggingface.co
+      Access-Control-Expose-Headers:
+      - X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - inline; filename*=UTF-8''generation_config.json; filename="generation_config.json";
+      Content-Length:
+      - '111'
+      Content-Security-Policy:
+      - default-src 'none'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Sat, 30 Nov 2024 19:29:02 GMT
+      ETag:
+      - '"3c6c66f61a8622bf3db80c332a225a19367f2bd0"'
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      Via:
+      - 1.1 8b40d2318598b57f3a4cb29b2f0fb820.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - rduu6qSZcK1F4CHe4ML_xpb_wAf38sz0k3jc6Jb-kIeN5juAJ8EDww==
+      X-Amz-Cf-Pop:
+      - DFW56-P3
+      X-Cache:
+      - Miss from cloudfront
+      X-Powered-By:
+      - huggingface-moon
+      X-Repo-Commit:
+      - 687d960c4d20b757867bb3284cf1a55d88e6c348
+      X-Request-Id:
+      - Root=1-674b677e-0f8089747cf7db181d42f302;c231d595-7e9f-45b2-a87a-b90e7d554e94
+      cross-origin-opener-policy:
+      - same-origin
+    status:
+      code: 200
+      message: OK
+version: 1

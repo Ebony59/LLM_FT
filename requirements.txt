@@ -1,0 +1,17 @@
+bitsandbytes
+datasets
+ipython
+peft
+pydantic
+typing
+transformers[torch]==4.45.2
+trl==0.8.6
+typing_extensions
+wandb
+chaiverse
+retry
+openai==1.55.3
+pytest-recording
+pytest
+mock
+matplotlib
