@@ -11,9 +11,6 @@ run `pip install flash-attn==2.6.3 --no-build-isolation` separately
 login with huggingface
 `huggingface-cli login`
 
-login with chaiverse
-`chaiverse login`
-
 set your openai api key as environment variable
 `export OPENAI_API_KEY="your-api-key-here`
 
